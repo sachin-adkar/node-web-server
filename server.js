@@ -48,8 +48,7 @@ res.render('home.hbs',{
 
 app.get('/about', (req,res) =>{
   res.render('about.hbs', {
-    pageTitle: 'About.hbs',
-    currentYear: new Date().getFullYear()
+    pageTitle: 'About.hbs'
   });
 });
 
