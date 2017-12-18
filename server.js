@@ -1,7 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
-const port = process.env.PORT || 4007;
+const port = process.env.PORT || 4008;
 
 var app = express();
 
@@ -50,6 +50,13 @@ app.get('/about', (req,res) =>{
   res.render('about.hbs', {
     pageTitle: 'About.hbs',
     currentYear: new Date().getFullYear()
+  });
+});
+
+app.get('/projects',(req,res) => {
+  res.render('projects.hbs', {
+pageTitle: 'Projects.hbs',
+message:'This is my portfolio'
   });
 });
 
