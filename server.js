@@ -1,6 +1,7 @@
 const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
+const port = process.env.PORT || 4007;
 
 var app = express();
 
@@ -13,9 +14,9 @@ hbs.registerHelper('screamIt', (text)=>{
 });
 
 
-app.use((req, res, next)=>{
-  res.render('maintanance.hbs');
-});
+// app.use((req, res, next)=>{
+//   res.render('maintanance.hbs');
+// });
   
 
 app.use((req, res, next)=>{
@@ -60,6 +61,6 @@ app.get('/bad', (req,res) =>{
   });
 });
 
-app.listen(4007, ()=>{
-  console.log('Server is up on port 4007');
+app.listen(port, ()=>{
+  console.log('Server is up on port',port);
 });
